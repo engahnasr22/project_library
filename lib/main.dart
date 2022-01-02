@@ -21,8 +21,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kPrimaryColor,
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kDefaultTextColor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        appBarTheme: const AppBarTheme(
-          
+        appBarTheme: const AppBarTheme(         
           backwardsCompatibility: false,
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: kDefaultBackgroundColor,
