@@ -1,6 +1,10 @@
 class ApiUtilUrl {
+  //Api Main URL
   static const String mainURL = 'https://dt-mena.com/app/api/';
 
+ //Api IMG URL
+  static const String mainImgURL = 'https://dt-mena.com/app/public';
+  
   // Api url for projects
   static const String projectsUrlApi = mainURL + 'projects';
 
