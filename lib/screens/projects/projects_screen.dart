@@ -1,11 +1,12 @@
 import 'package:app_library/constant/api_url.dart';
 import 'package:app_library/constant/colors.dart';
 import 'package:app_library/controller/projects/projects.dart';
+import 'package:app_library/models/projects/category_model.dart';
 import 'package:app_library/models/projects/projects_model.dart';
 import 'package:flutter/material.dart';
 
 class OverviewProjectsHome extends StatelessWidget {
-   OverviewProjectsHome({ Key? key }) : super(key: key);
+  OverviewProjectsHome({Key? key}) : super(key: key);
   String urlImage = ApiUtilUrl.mainImgURL;
   ProjectsController projectController = ProjectsController();
   @override
@@ -60,13 +61,27 @@ class OverviewProjectsHome extends StatelessWidget {
                   placeholder: 'assets/images/loading_img_new.gif',
                   image: urlImage + project.proImage!),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Text(
-                project.proTitle!,
-                style: const TextStyle(
-                    color: Colors.white, fontFamily: 'Tajawal', fontSize: 20),
-              ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(               
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    project.proTitle!,
+                    textAlign: TextAlign.right,
+                    style: const TextStyle(
+                        color: Colors.white, fontFamily: 'Tajawal', fontSize: 20),
+                  ),
+                ),
+                Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      project.projectCategory!.catTitle!,
+                      textAlign: TextAlign.left,
+                      style: const TextStyle(
+                          color: Colors.white, fontFamily: 'Tajawal', fontSize: 20),
+                    )),
+              ],
             )
           ],
         ),
@@ -95,5 +110,4 @@ class OverviewProjectsHome extends StatelessWidget {
       ),
     );
   }
-
 }
