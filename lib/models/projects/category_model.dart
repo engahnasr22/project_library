@@ -1,8 +1,14 @@
-class ProjectCategoryName {
-  int catID;
-  String catTitle;
-  String catImgUrl;
+class ProjectsCategory {
+  int? catId;
+  String? catTitle, catDesc, catImage;
 
-  ProjectCategoryName(
-      {required this.catID, required this.catTitle, required this.catImgUrl});
+  ProjectsCategory(this.catId, this.catTitle, this.catDesc, this.catImage);
+
+  ProjectsCategory.fromJson(Map<String, dynamic> jsonObject) {
+    catId = jsonObject['id'];
+    catTitle = jsonObject['title'];
+    catDesc = jsonObject['desc'];
+    catImage = jsonObject['image'];
+    
+  }
 }
