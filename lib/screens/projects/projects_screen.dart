@@ -48,43 +48,61 @@ class OverviewProjectsHome extends StatelessWidget {
 
   _projectShow(Project project) {
     return Card(
-      color: kDefaultBackgroundColor,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: <Widget>[
-            Container(
-              decoration: const BoxDecoration(
-                  color: kPrimaryColor,
-                  borderRadius: BorderRadius.all(Radius.circular(15.0))),
-              child: FadeInImage.assetNetwork(
-                  placeholder: 'assets/images/loading_img_new.gif',
-                  image: urlImage + project.proImage!),
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(               
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text(
-                    project.proTitle!,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+             Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+            
+            children: [
+              Text(
+                project.proTitle!,
+                textAlign: TextAlign.right,
+                style: const TextStyle(
+                    color: kDefaultTextColor,
+                    fontFamily: 'Tajawal',
+                    fontSize: 20),
+              ),
+              Row(
+                children: [
+                  Text(
+                    project.projectCategory!.catTitle!,
                     textAlign: TextAlign.right,
                     style: const TextStyle(
-                        color: Colors.white, fontFamily: 'Tajawal', fontSize: 20),
+                        color: kDefaultTextColor,
+                        fontFamily: 'Tajawal',
+                        fontSize: 20),
                   ),
-                ),
-                Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      project.projectCategory!.catTitle!,
-                      textAlign: TextAlign.left,
-                      style: const TextStyle(
-                          color: Colors.white, fontFamily: 'Tajawal', fontSize: 20),
-                    )),
-              ],
-            )
-          ],
-        ),
+                  Text(
+                    project.projectCategory!.catDesc!,
+                    textAlign: TextAlign.right,
+                    style: const TextStyle(
+                        color: kDefaultTextColor,
+                        fontFamily: 'Tajawal',
+                        fontSize: 20),
+                  ),
+                ],
+              ),
+            ],
+          ),
+             Column(
+               children: [
+                 ClipRRect(
+                   borderRadius: BorderRadius.circular(15),
+                   child: FadeInImage.assetNetwork(
+                     placeholder: 'assets/images/loading_img_new.gif',
+                     image: urlImage + project.proImage!,
+                     width: 100,
+                     height: 100,
+                     fit: BoxFit.cover,
+                   ),
+                 ),
+               ],
+             ),
+         
+        ],
       ),
     );
   }
