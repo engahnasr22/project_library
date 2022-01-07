@@ -27,7 +27,7 @@ class Body extends StatelessWidget {
                     children: [
                       const Text(
                         "Hello Ahmed",
-                        style: TextStyle(color:kPrimaryColor,fontFamily: 'Tajawal', fontSize: 20, fontWeight: FontWeight.bold),
+                        style: TextStyle(color:kDefaultTextColor,fontFamily: 'Tajawal', fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
                       Image.network(

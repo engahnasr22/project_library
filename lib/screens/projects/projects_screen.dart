@@ -49,13 +49,23 @@ class OverviewProjectsHome extends StatelessWidget {
   _projectShow(Project project) {
     return Card(
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+                       Column(
+               children: [
+                 ClipRRect(
+                   borderRadius: BorderRadius.circular(15),
+                   child: FadeInImage.assetNetwork(
+                     placeholder: 'assets/images/loading_img_new.gif',
+                     image: urlImage + project.proImage!,
+                     width: 100,
+                     height: 100,
+                     fit: BoxFit.cover,
+                   ),
+                 ),
+               ],
+             ),
+     
              Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-
-            
             children: [
               Text(
                 project.proTitle!,
@@ -87,21 +97,7 @@ class OverviewProjectsHome extends StatelessWidget {
               ),
             ],
           ),
-             Column(
-               children: [
-                 ClipRRect(
-                   borderRadius: BorderRadius.circular(15),
-                   child: FadeInImage.assetNetwork(
-                     placeholder: 'assets/images/loading_img_new.gif',
-                     image: urlImage + project.proImage!,
-                     width: 100,
-                     height: 100,
-                     fit: BoxFit.cover,
-                   ),
-                 ),
-               ],
-             ),
-         
+    
         ],
       ),
     );

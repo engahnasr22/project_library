@@ -1,4 +1,5 @@
 import 'package:app_library/constant/colors.dart';
+import 'package:app_library/screens/home/home.dart';
 import 'package:app_library/screens/projects/projects_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           elevation: 0.0,
         )
       ),
-      home:  OverviewProjectsHome(),
+      home:  HomePage(),
     );
   }
 }
